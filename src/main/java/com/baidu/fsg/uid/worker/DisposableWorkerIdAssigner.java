@@ -45,6 +45,7 @@ public class DisposableWorkerIdAssigner implements WorkerIdAssigner {
      *
      * @return assigned worker id
      */
+    @Override
     @Transactional
     public long assignWorkerId() {
         // build worker node entity
@@ -74,5 +75,4 @@ public class DisposableWorkerIdAssigner implements WorkerIdAssigner {
 
         return workerNodeEntity;
     }
-
 }
