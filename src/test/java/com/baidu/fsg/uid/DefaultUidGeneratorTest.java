@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.annotation.Resource;
 
+import com.baidu.fsg.uid.impl.DefaultUidGenerator;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,15 +17,13 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.baidu.fsg.uid.impl.DefaultUidGenerator;
-
 /**
  * Test for {@link DefaultUidGenerator}
- * 
+ *
  * @author yutianbao
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:uid/default-uid-spring.xml" })
+@ContextConfiguration(locations = {"classpath:uid/default-uid-spring.xml"})
 public class DefaultUidGeneratorTest {
     private static final int SIZE = 100000; // 10w
     private static final boolean VERBOSE = true;
@@ -50,7 +49,7 @@ public class DefaultUidGeneratorTest {
 
     /**
      * Test for parallel generate
-     * 
+     *
      * @throws InterruptedException
      */
     @Test
@@ -84,7 +83,7 @@ public class DefaultUidGeneratorTest {
      * Worker run
      */
     private void workerRun(Set<Long> uidSet, AtomicInteger control) {
-        for (;;) {
+        for (; ; ) {
             int myPosition = control.updateAndGet(old -> (old == SIZE ? SIZE : old + 1));
             if (myPosition == SIZE) {
                 return;
