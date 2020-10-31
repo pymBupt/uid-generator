@@ -134,7 +134,7 @@ public class CachedUidGenerator extends DefaultUidGenerator implements Disposabl
             bufferPaddingExecutor.setScheduleInterval(scheduleInterval);
         }
 
-        LOGGER.info("Initialized BufferPaddingExecutor. Using schdule:{}, interval:{}", usingSchedule,
+        LOGGER.info("Initialized BufferPaddingExecutor. Using schedule:{}, interval:{}", usingSchedule,
             scheduleInterval);
 
         // set rejected put/take handle policy

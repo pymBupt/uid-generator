@@ -158,7 +158,7 @@ Copy beans of CachedUidGenerator to 'test/resources/uid/cached-uid-spring.xml'.
  
     <!-- In-time padding, available UIDs percentage(0, 100) of the RingBuffer, default as 50 -->
     <!-- Sample: bufferSize=1024, paddingFactor=50 -> threshold=1024 * 50 / 100 = 512. -->
-    <!-- When the rest available UIDs < 512, RingBiffer will be padded in-time -->
+    <!-- When the rest available UIDs < 512, RingBuffer will be padded in-time -->
     <property name="paddingFactor" value="50"></property>
  
     <!-- Periodic padding -->

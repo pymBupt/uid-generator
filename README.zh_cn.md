@@ -38,7 +38,7 @@ RingBuffer环形数组，数组每个元素成为一个slot。RingBuffer容量�
 Tail指针、Cursor指针用于环形数组上读写slot：
 
 * Tail指针  
-  表示Producer生产的最大序号(此序号从0开始，持续递增)。Tail不能超过Cursor，即生产者不能覆盖未消费的slot。当Tail已赶上curosr，此时可通过```rejectedPutBufferHandler```指定PutRejectPolicy
+  表示Producer生产的最大序号(此序号从0开始，持续递增)。Tail不能超过Cursor，即生产者不能覆盖未消费的slot。当Tail已赶上cursor，此时可通过```rejectedPutBufferHandler```指定PutRejectPolicy
   
 * Cursor指针  
   表示Consumer消费到的最小序号(序号序列与Producer序列相同)。Cursor不能超过Tail，即不能消费未生产的slot。当Cursor已赶上tail，此时可通过```rejectedTakeBufferHandler```指定TakeRejectPolicy

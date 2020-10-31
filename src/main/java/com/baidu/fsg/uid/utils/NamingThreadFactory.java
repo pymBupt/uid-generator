@@ -108,9 +108,9 @@ public class NamingThreadFactory implements ThreadFactory {
      */
     private String getInvoker(int depth) {
         Exception e = new Exception();
-        StackTraceElement[] stes = e.getStackTrace();
-        if (stes.length > depth) {
-            return ClassUtils.getShortClassName(stes[depth].getClassName());
+        StackTraceElement[] stackTraceElements = e.getStackTrace();
+        if (stackTraceElements.length > depth) {
+            return ClassUtils.getShortClassName(stackTraceElements[depth].getClassName());
         }
         return getClass().getSimpleName();
     }

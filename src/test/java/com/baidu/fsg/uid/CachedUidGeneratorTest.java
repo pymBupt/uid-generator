@@ -84,7 +84,7 @@ public class CachedUidGeneratorTest {
     }
 
     /**
-     * Woker run
+     * Worker run
      */
     private void workerRun(Set<Long> uidSet, AtomicInteger control) {
         for (; ; ) {

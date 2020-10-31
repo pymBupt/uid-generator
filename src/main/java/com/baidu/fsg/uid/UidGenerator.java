@@ -40,5 +40,4 @@ public interface UidGenerator {
      * @return Parsed info
      */
     String parseUID(long uid);
-
 }
