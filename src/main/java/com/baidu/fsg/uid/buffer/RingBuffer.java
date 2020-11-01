@@ -273,5 +273,4 @@ public class RingBuffer {
 
         return builder.toString();
     }
-
 }
